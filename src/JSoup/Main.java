@@ -33,7 +33,7 @@ public class Main
         Connection cardSite = Jsoup.connect("https://www.cardmarket.com" + relHref);
         Document cardSiteDoc = cardSite.get();
         Elements allDD = cardSiteDoc.select("dd");
-        Elements expansion = cardSiteDoc.select("#tabContent-info > div > div.col-12.col-lg-6.mx-auto > div > div.info-list-container.col-12.col-md-8.col-lg-12.mx-auto.align-self-start > dl > dd:nth-child(6) > div > a.mb-2");
+        Elements expansion = cardSiteDoc.select("#tabContent-info > div > div.col-12.col-lg-6.mx-auto > div > div.info-list-container.col-12.col-md-8.col-lg-12.mx-auto.align-self-start > dl > dd > div > a.mb-2");
 
         String priceTrend = allDD.last().text();
         System.out.println(allTR.first().text() + ", " + expansion.text() + " - " + "Price Trend: " + priceTrend.substring(0, priceTrend.indexOf("€")+1));
